@@ -1,0 +1,13 @@
+name: Orascoptic
+title: Orascoptic
+username:
+account: invo
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 9354922
+bundleId: 7389443
+url: https://invo.shinyapps.io/Orascoptic/
+when: 1687793179.91844
+lastSyncTime: 1687793179.91845
+asMultiple: FALSE
+asStatic: FALSE

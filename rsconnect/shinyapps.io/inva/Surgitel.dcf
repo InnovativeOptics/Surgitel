@@ -1,0 +1,12 @@
+name: Surgitel
+title: Surgitel
+username: inva
+account: inva
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 13805614
+bundleId:
+url: https://inva.shinyapps.io/Surgitel/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE

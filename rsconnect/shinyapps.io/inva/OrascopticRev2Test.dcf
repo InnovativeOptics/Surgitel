@@ -1,0 +1,13 @@
+name: OrascopticRev2Test
+title: OrascopticRev2Test
+username: inva
+account: inva
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 12367545
+bundleId: 8947068
+url: https://inva.shinyapps.io/OrascopticRev2Test/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: data/Orascoptic_loupe_data.xlsx
