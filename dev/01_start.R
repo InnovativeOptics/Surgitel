@@ -19,9 +19,9 @@
 ## to change the name in the app_sys() function in app_config.R /!\
 ##
 golem::fill_desc(
-  pkg_name = "Orascoptic", # The Name of the package containing the App
+  pkg_name = "Surgitel", # The Name of the package containing the App
   pkg_title = "INVORASCOPIC", # The Title of the package containing the App
-  pkg_description = "An app that Orascoptic may use to quickly recommend laser safety inserts to their customers.", # The Description of the package containing the App
+  pkg_description = "An app that Surgitel may use to quickly recommend laser safety inserts to their customers.", # The Description of the package containing the App
   author_first_name = "John", # Your First Name
   author_last_name = "Lecocq", # Your Last Name
   author_email = "john@innovativeoptics.com", # Your Email
@@ -37,7 +37,7 @@ golem::install_dev_deps()
 
 ## Create Common Files ----
 ## See ?usethis for more information
-usethis::use_mit_license("INVO") # You can set another license here
+usethis::use_mit_license("INVA") # You can set another license here
 usethis::use_readme_rmd(open = FALSE)
 devtools::build_readme()
 # Note that `contact` is required since usethis version 2.1.5
