@@ -1,0 +1,17 @@
+* installing *source* package 'Surgitel' ...
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+Adding "^\\.secrets$" to './.Rbuildignore'.
+Error in googledrive::drive_auth(cache = ".secrets", email = "innovativeopticsdatabase@gmail.com") : 
+  Can't get Google credentials.
+ℹ Are you running googledrive in a non-interactive session? Consider:
+• Call `drive_deauth()` to prevent the attempt to get credentials.
+• Call `drive_auth()` directly with all necessary specifics.
+ℹ See gargle's "Non-interactive auth" vignette for more details:
+ℹ <https://gargle.r-lib.org/articles/non-interactive-auth.html>
+Error: unable to load R code in package 'Surgitel'
+Execution halted
+ERROR: lazy loading failed for package 'Surgitel'
+* removing 'C:/Users/andy/OneDrive/Desktop/Surgitel/Surgitel.Rcheck/Surgitel'

@@ -20,11 +20,11 @@
 ##
 golem::fill_desc(
   pkg_name = "Surgitel", # The Name of the package containing the App
-  pkg_title = "INVORASCOPIC", # The Title of the package containing the App
+  pkg_title = "INVARASCOPIC", # The Title of the package containing the App
   pkg_description = "An app that Surgitel may use to quickly recommend laser safety inserts to their customers.", # The Description of the package containing the App
-  author_first_name = "John", # Your First Name
-  author_last_name = "Lecocq", # Your Last Name
-  author_email = "john@innovativeoptics.com", # Your Email
+  author_first_name = "Melissa", # Your First Name
+  author_last_name = "Rich", # Your Last Name
+  author_email = "melissa@innovativeoptics.com", # Your Email
   repo_url = NULL, # The URL of the GitHub Repo (optional),
   pkg_version = "0.0.0.9000" # The Version of the package containing the App
 )
@@ -55,7 +55,8 @@ golem::use_recommended_tests()
 
 ## Favicon ----
 # If you want to change the favicon (default is golem's one)
-golem::use_favicon("www/icons/logo-small.png") # path = "path/to/ico". Can be an online file.
+#golem::use_favicon()
+golem::use_favicon("/www/icons/logo-small.png") # path = "path/to/ico". Can be an online file.
 # golem::remove_favicon() # Uncomment to remove the default favicon
 
 ## Add helper functions ----

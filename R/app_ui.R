@@ -23,6 +23,12 @@ app_ui <- function(request) {
     golem_add_external_resources(),
     # Your application UI logic
     page_fluid(
+
+
+      titlePanel("",
+                 tags$head(tags$link(rel = "icon", type = "png", href = "icons/logo-small.png"),
+                           tags$title("Surgitel Laser Safety"))),
+
       theme = surgitel_theme,
       card(card_header(inverse = T,
                        fluidRow(
@@ -43,7 +49,7 @@ app_ui <- function(request) {
       ),
       fluidRow(
         column(
-          3,
+          4,
           align = 'center',
           selectInput(
             inputId = "loupestyle",
@@ -163,6 +169,10 @@ app_ui <- function(request) {
 #' @import shiny
 #' @importFrom golem add_resource_path activate_js favicon bundle_resources
 #' @noRd
+
+#I'm not sure why this function is not working. But added at the beginning at the top
+#where it works with titlePanel function - checking with Rachdyan to find out why.
+# - 1/27/25, MLR
 golem_add_external_resources <- function() {
   add_resource_path(
     "www",
@@ -170,11 +180,14 @@ golem_add_external_resources <- function() {
   )
 
   tags$head(
-    favicon(ext = "png"),
+   favicon(ext = "png"),
+  #  favicon(),
     bundle_resources(
-      path = app_sys("app/www"),
-      app_title = "Orascoptic"
-    )
+      path = app_sys("app/www/icons"),
+      app_title = "Surgitel Laser Safety"
+    ),
+ #   tags$link(href="https://uploads-ssl.webflow.com/642bc00aa11863508034d79d/css/refractives.webflow.3cbf59264.min.css", rel="stylesheet", type="text/css")
+
     # Add here other external resources
     # for example, you can add shinyalert::useShinyalert()
   )

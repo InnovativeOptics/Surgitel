@@ -38,28 +38,6 @@ dental_data <- googlesheets4::read_sheet(sheet_id, sheet = "laser_info", col_typ
   #mutate(VLT = scales::percent(as.numeric(VLT))) %>%
   left_join(lens_data, by = join_by(`Eyewear Lens Compatible` == Lens))
 
-#surgitel_data <- readxl::read_excel("data/Dental_data.xlsx",
-#                                      sheet = "Loupe_types") %>%
-#  filter(`Mfg` == "Orascoptic Current Models") %>%
-#  rename(`Surgitel Frame` = Mod, Style = Size, `Innovative Optics Insert` = `Insert Part Number`)
-
-#%>%
-#  filter(!`Lumadent Frame` %in% c("Argon", "Standard")) %>%
-#  select(-Mfg)
-
-# Load dental data
-#lens_data <- readxl::read_excel("data/Dental_data.xlsx", sheet = "Lens_details") %>%
-#  select(-VLT)
-
-#dental_data <- readxl::read_excel("data/Dental_data.xlsx") %>%
-#  filter(`Laser Mfg` != "") %>%
-#  select(-Website) %>%
-#  mutate(VLT = scales::percent(as.numeric(VLT))) %>%
-#  left_join(lens_data, by = join_by(`Eyewear Lens Compatible` == Lens))
-
-
-
-
 
 app_server <- function(input, output, session) {
   # The application server logic
@@ -73,10 +51,6 @@ app_server <- function(input, output, session) {
   })
 
 
-  #loupe_insert <- eventReactive(input$loupestyle,{
-  #  surgitel_data %>%
-  #    filter(`Surgitel Frame` == input$loupestyle)
-  #})
 
   loupe_insert <- eventReactive(c(input$loupestyle ),{
     result <- surgitel_data %>%
