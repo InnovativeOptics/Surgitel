@@ -30,22 +30,10 @@ app_ui <- function(request) {
                            tags$title("Surgitel Laser Safety"))),
 
       theme = surgitel_theme,
-      card(card_header(inverse = T,
-                       fluidRow(
-                         column(6,
-                                align = 'left',
-                                a(href = "https://www.surgitel.com/",
-                               img(src = "icons/SurgiTel_logo.jpg", width = "270px"))
+      card(
 
-                         ),
-                         column(6, align= 'right',
-
-                                h5("SUPPORT@SURGITEL.COM"),
-                                h5("800.959.0153")
-
-                         )))
-           ,fluidRow(column(12,align='center',
-                            h2(strong("Search eye protection by selecting a loupe style and laser device"))))
+           fluidRow(column(12,align='center',
+                            h5(strong("Search eye protection by selecting a loupe style and laser device"))))
       ),
       fluidRow(
         column(
@@ -95,8 +83,9 @@ app_ui <- function(request) {
           align = "center",
           br(),
           actionButton("run",
-                       icon = icon("magnifying-glass"),
-                       style='padding-left:50px;padding-right:50px;padding-top:1px;padding-bottom:1px; font-size:80%',
+# remove                       icon = icon("magnifying-glass"),
+#                       style='padding-left:50px;padding-right:50px;padding-top:1px;padding-bottom:1px; font-size:80%',
+                       style='padding-left:30px;padding-right:30px;padding-top:5px;padding-bottom:1px; font-size:30%',
                        h5(strong("Search")),
                        class = "btn-secondary"))
       ),

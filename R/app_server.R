@@ -72,39 +72,6 @@ app_server <- function(input, output, session) {
       DentalLibrary::generate_lens_link(loupe_insert = loupe_insert())
 
 
- #commented out, because this is going into DentalLibrary
-#      mutate(`INVO Part Number Raw` = if_else(`Eyewear Lens Compatible` == "Gi1",
-#                                              glue::glue_safe(loupe_insert()$`Innovative Optics Insert`,"." , `Eyewear Lens Compatible`),
-#                                              glue::glue_safe(loupe_insert()$`Innovative Optics Insert`,"." , `Eyewear Lens Compatible`, ".2B")),
-#             `Website`= case_when(loupe_insert()$`Innovative Optics Insert` %in% c("IVL") & `Eyewear Lens Compatible` == "Pi1" ~ "https://innovativeoptics.com/product/pi1-inview-large-laser-clip-in/",
-#                                  loupe_insert()$`Innovative Optics Insert` %in% c("IVL.R") & `Eyewear Lens Compatible` == "Pi1" ~ "https://innovativeoptics.com/product/ivl-r-pi1-laser-insert-for-loupes/",
-#                                  loupe_insert()$`Innovative Optics Insert` %in% c("IVR") & `Eyewear Lens Compatible` == "Pi1" ~ "https://innovativeoptics.com/product/pi1-inview-large-laser-clip-in/",
-#                                  loupe_insert()$`Innovative Optics Insert` %in% c("IVR.R") & `Eyewear Lens Compatible` == "Pi1" ~ "https://innovativeoptics.com/product/ivr-r-pi1-laser-insert-for-loupes/",
-#                                  loupe_insert()$`Innovative Optics Insert` %in% c("IVL") & `Eyewear Lens Compatible` == "Pi17" ~ "https://innovativeoptics.com/product/pi17-inview-large-laser-clip-in/",
-#                                  loupe_insert()$`Innovative Optics Insert` %in% c("IVL.R") & `Eyewear Lens Compatible` == "Pi17" ~ "https://innovativeoptics.com/product/ivl-r-pi17-laser-insert-for-loupes/",
-#                                  loupe_insert()$`Innovative Optics Insert` %in% c("IVL") & `Eyewear Lens Compatible` == "Pi19" ~ "https://innovativeoptics.com/product/pi19-inview-large-laser-clip-in/",
-#                                  loupe_insert()$`Innovative Optics Insert` %in% c("IVL.R") & `Eyewear Lens Compatible` == "Pi19" ~ "https://innovativeoptics.com/product/ivl-r-pi19-laser-insert-for-loupes/",
-#                                  loupe_insert()$`Innovative Optics Insert` %in% c("IVR") & `Eyewear Lens Compatible` == "Pi19" ~ "https://innovativeoptics.com/product/pi19-inview-large-laser-clip-in/",
-##                                  loupe_insert()$`Innovative Optics Insert` %in% c("IVR.R") & `Eyewear Lens Compatible` == "Pi19" ~ "https://innovativeoptics.com/product/ivr-r-pi19-laser-insert-for-loupes/",
-#                                  loupe_insert()$`Innovative Optics Insert` %in% c("IVL") & `Eyewear Lens Compatible` == "Pi23" ~ "https://innovativeoptics.com/product/pi23-inview-large-laser-clip-in/",
-#                                  loupe_insert()$`Innovative Optics Insert` %in% c("IVL.R") & `Eyewear Lens Compatible` == "Pi23" ~ "https://innovativeoptics.com/product/ivl-r-pi23-laser-insert-for-loupes/",
-#                                  loupe_insert()$`Innovative Optics Insert` %in% c("IVR") & `Eyewear Lens Compatible` == "Pi23" ~ "https://innovativeoptics.com/product/pi23-inview-large-laser-clip-in/",
-#                                  loupe_insert()$`Innovative Optics Insert` %in% c("IVR.R") & `Eyewear Lens Compatible` == "Pi23" ~ "https://innovativeoptics.com/product/ivr-r-pi23-laser-insert-for-loupes/",
-#                                  loupe_insert()$`Innovative Optics Insert` %in% c("IVR.R") & `Eyewear Lens Compatible` == "Pi23" ~ "https://innovativeoptics.com/product/ivr-r-pi23-laser-insert-for-loupes/",
-#
-#                                  loupe_insert()$`Innovative Optics Insert` %in% c("Primo") & `Eyewear Lens Compatible` == "Pi1" ~ "https://innovativeoptics.com/product/primo-pi1-laser-inserts/",
-#                                  loupe_insert()$`Innovative Optics Insert` %in% c("Primo") & `Eyewear Lens Compatible` == "Pi17" ~ "https://innovativeoptics.com/product/primo-pi17-laser-inserts/",
-#                                  loupe_insert()$`Innovative Optics Insert` %in% c("Primo") & `Eyewear Lens Compatible` == "Pi19" ~ "https://innovativeoptics.com/product/primo-pi19-laser-inserts/",
-#                                  loupe_insert()$`Innovative Optics Insert` %in% c("Primo") & `Eyewear Lens Compatible` == "Pi23" ~ "https://innovativeoptics.com/product/primo-pi23-laser-inserts/",
-#
-#                                  loupe_insert()$`Innovative Optics Insert` %in% c("IVL") & `Eyewear Lens Compatible` == "Gi1" ~ "https://innovativeoptics.com/product/gi1-inview-large-laser-clip-in/",
-#
-#                                  loupe_insert()$`Innovative Optics Insert` %in% c("IVL.R") & `Eyewear Lens Compatible` == "Gi1" ~ "https://innovativeoptics.com/product/ivl-r-gi1-laser-insert-for-loupes/",
-#                                  loupe_insert()$`Innovative Optics Insert` %in% c("IVR") & `Eyewear Lens Compatible` == "Gi1" ~ "https://innovativeoptics.com/product/gi1-inview-regular-laser-clip-in/",
-#                                  loupe_insert()$`Innovative Optics Insert` %in% c("IVR.R") & `Eyewear Lens Compatible` == "Gi1" ~ "https://innovativeoptics.com/product/gi1-inview-regular-laser-clip-in/",
-#                                  .default = Website)
-#      ) %>%
-#      mutate(`INVO Part Number` = glue::glue_safe("<a href='{Website}' target ='_blank'> {INVO Part Number Raw} </a> "))
 
     print("\nSelected Data")
     print(result)
@@ -129,22 +96,6 @@ app_server <- function(input, output, session) {
                                  })
 
   table_info <- eventReactive(input$run,{
-    # if(nrow(loupe_insert()) > 1){
-    #   get_invo_part_number <- function(optics_insert, eyewear_lens_comp){
-    #     # print(loupe_insert)
-    #     result <- if_else(eyewear_lens_comp == "Gi1",
-    #                       glue::glue_safe(optics_insert,"." , eyewear_lens_comp),
-    #                       glue::glue_safe(optics_insert,"." , eyewear_lens_comp, ".2B")
-    #     )
-    #   }
-    #   invo_part_number <- sapply(loupe_insert()$`Innovative Optics Insert`, get_invo_part_number, eyewear_lens_comp = selected_data()$`Eyewear Lens Compatible`)
-    #
-    #   result <- tibble(
-    #     "INVO Part Number" =  invo_part_number,
-    #     "Optical Density Specifications" = selected_data()$`Optical Density`,
-    #     "Visible Light Transmission" = selected_data()$VLT) %>%
-    #     distinct()
-    # } else{
 
     result <- tibble("INVO Part Number" = selected_data()$`INVO Part Number`,
                      "Optical Density Specifications" = selected_data()$`Optical Density`,
@@ -194,20 +145,6 @@ app_server <- function(input, output, session) {
     req(input$loupestyle)
     req(input$mfg)
     req(input$mod)
-    # if (input$loupestyle == "Triumph" | input$loupestyle == "Tempo"){
-    #   result <- c("www/OrascopticLoupeImages/Triumph.Easein.Back.png",
-    #     if_else(selected_data()$`Eyewear Lens Compatible` %in% c("Pi19", "Pi23"),
-    #             glue::glue_safe("www/recs/", selected_data()$`Rec1`, ".jpeg"),
-    #             glue::glue_safe("www/recs/", selected_data()$`Rec1`, ".jpg")
-    #     ),
-    #     if_else(selected_data()$`Eyewear Lens Compatible` %in% c("Pi19", "Pi23"),
-    #             glue::glue_safe("www/recs/", selected_data()$`Rec1`, ".jpeg"),
-    #             glue::glue_safe("www/recs/", selected_data()$`Rec2`, ".jpg")
-    #     ),
-    #     glue::glue_safe("www/recs/", selected_data()$`Rec3`, ".jpg"),
-    #     "www/OrascopticLoupeImages/Triumph.Easein.Front.png")
-    # }
-    # else {
     loupe_rec <- loupe_image_paths %>%
       filter(stringr::str_detect(loupe_image_paths$LoupeImages, sub(" ", "", input$loupestyle)) &
               # stringr::str_detect(loupe_image_paths$LoupeImages, sub(" ", "", input$style)) &
@@ -215,6 +152,36 @@ app_server <- function(input, output, session) {
                )
       )
 
+    loupe_rec_front <- loupe_rec[loupe_rec %>% stringr::str_detect('FRONT')]
+
+
+
+    if(length(loupe_rec_front) > 1){
+      front_dist <- stringdist::stringdist(input$loupestyle, loupe_rec_front)
+      loupe_rec_front <- loupe_rec_front[which.min(front_dist)]
+    }
+
+
+
+    loupe_rec_side <- loupe_rec[loupe_rec %>% stringr::str_detect('SIDE')]
+
+
+
+    if(length(loupe_rec_side) > 1){
+      side_dist <- stringdist::stringdist(input$loupestyle, loupe_rec_side)
+      loupe_rec_side <- loupe_rec_front[which.min(front_dist)]
+    }
+
+
+
+    loupe_rec_top <- loupe_rec[loupe_rec %>% stringr::str_detect('TOP')]
+
+
+
+    if(length(loupe_rec_top) > 1){
+      side_dist <- stringdist::stringdist(input$loupestyle, loupe_rec_top)
+      loupe_rec_top <- loupe_rec_front[which.min(front_dist)]
+    }
     print("\nLoupe Rec")
     print(loupe_rec)
 
