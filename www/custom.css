@@ -1,0 +1,40 @@
+
+/*body {
+  background-color: red;
+  font-family: "Work Sans", sans-serif;
+}
+*/
+
+
+
+
+@media only screen and (max-width: 800px) {
+  #productImageDiv{
+    scale: 75%;
+  }
+}
+
+
+
+@media only screen and (max-width: 400px) {
+  #productImageDiv{
+    margin-left: -0.5em;
+  }
+       /* Force the table to fit its container exactly and wrap text */
+  #tableInfo table {
+          width: 100% !important;         /* Fill the parent container */
+          table-layout: fixed !important; /* Fixed layout so columns don't auto-expand */
+          border-collapse: collapse;      /* Consistent cell spacing */
+          border-spacing: 0;
+  }
+
+  /* Make sure table headers and cells can break/wrap text */
+  #tableInfo table th, #tableInfo table td {
+          white-space: normal !important;    /* Allow multi-line text */
+          word-wrap: break-word !important;  /* Break long words if needed */
+          overflow-wrap: break-word !important;
+          word-break: break-word !important;
+    }
+
+}
+

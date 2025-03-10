@@ -1,8 +1,8 @@
 Package: Surgitel
-Title: INVARASCOPIC
-Version: 0.0.0.9000
+Title: A search tool for Surgitel loupe compatible laser eye protection
+Version: 1.0
 Authors@R: 
-    person("John", "Lecocq", , "john@innovativeoptics.com", role = c("cre", "aut"))
+    person("Melissa", "Rich", , "melissa@innovativeoptics.com",
 Description: An app that Surgitel may use to quickly recommend laser
     safety inserts to their customers.
 License: MIT + file LICENSE
@@ -18,7 +18,10 @@ Imports:
     googledrive,
     googlesheets4,
     shiny (>= 1.7.4),
-    stringr
+    stringr,
+    shinyjs,
+    DentalLibraryPurchaseLink,
+    shinybrowser
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
