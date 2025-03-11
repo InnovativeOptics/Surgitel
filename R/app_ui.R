@@ -35,7 +35,13 @@ app_ui <- function(request) {
       card(
 
         fluidRow(column(12,align='center',
-                        h5(strong("Search eye protection by selecting a loupe style and laser device"))))
+                        (strong("Search eye protection by selecting a loupe style and laser device"))),
+                 column(12,align='center',
+                        ("*The user is responsible for confirming their own laser specifcations"))
+                 )
+              #          h5(strong("Search eye protection by selecting a loupe style, and a laser device"))),
+         #       column(12,align='center',
+        #     h5("*The user is responsible for confirming their own laser specifcations"))))
       ),
       fluidRow(
         column(
