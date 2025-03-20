@@ -29,19 +29,22 @@ app_ui <- function(request) {
 
       titlePanel("",
                  tags$head(tags$link(rel = "icon", type = "png", href = "icons/logo-small.png"),
-                           tags$title("Surgitel Laser Safety"))),
+                           tags$title("SurgiTel Laser Safety"))),
 
       theme = surgitel_theme,
       card(
 
         fluidRow(column(12,align='center',
                         (strong("Search eye protection by selecting a loupe style and laser device"))),
-                 column(12,align='center',
-                        ("*The user is responsible for confirming their own laser specifcations"))
+                column(12,align='center',
+                        ("*This tool is applicable for customers located only in North America")),
+                column(12,align='center',
+                       ("*The user is responsible for confirming their own laser specifications"))
+
                  )
               #          h5(strong("Search eye protection by selecting a loupe style, and a laser device"))),
          #       column(12,align='center',
-        #     h5("*The user is responsible for confirming their own laser specifcations"))))
+        #     h5("*The user is responsible for confirming their own laser specifications"))))
       ),
       fluidRow(
         column(
@@ -49,7 +52,7 @@ app_ui <- function(request) {
           align = 'center',
           selectInput(
             inputId = "loupestyle",
-            label = h4(strong("Surgitel Frame")),
+            label = h4(strong("SurgiTel Frame")),
             choices = sort(surgitel_data$`Surgitel Frame`),
             selected = 1
           )
@@ -189,7 +192,7 @@ golem_add_external_resources <- function() {
     #  favicon(),
     bundle_resources(
       path = app_sys("app/www/icons"),
-      app_title = "Surgitel Laser Safety"
+      app_title = "SurgiTel Laser Safety"
     ),
     tags$link(rel = "stylesheet", type = "text/css", href = "custom.css")
     #   tags$link(href="https://uploads-ssl.webflow.com/642bc00aa11863508034d79d/css/refractives.webflow.3cbf59264.min.css", rel="stylesheet", type="text/css")

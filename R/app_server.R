@@ -86,7 +86,7 @@ app_server <- function(input, output, session) {
 
   user_info <- eventReactive(input$run,{
     result <- tibble(
-      "Surgitel Loupe Style" = loupe_insert()$`Surgitel Frame`,
+      "SurgiTel Loupe Style" = loupe_insert()$`Surgitel Frame`,
       "Laser Information" = glue::glue_safe(selected_data()$`Laser Mfg`, " ", selected_data()$`Laser Model`),
       "Laser Specifications" = selected_data()$Wavelengths) %>%
       distinct()
